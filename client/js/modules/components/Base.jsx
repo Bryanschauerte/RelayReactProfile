@@ -10,8 +10,7 @@ import InputContainer from "./ContentInput";
 import CreateInformationMutation from '../../mutations/CreateInformationMutation';
 import TopNav from './TopNav.js';
 import InformationContainer from './InfoContainer.js';
-import Box from './SideSlider.js';
-import Plaine from './Plaine';
+import PlaineContainer from './PlaineContainer';
 import Title from './Title';
 
 
@@ -20,7 +19,7 @@ class Base extends React.Component{
     super(props);
     this.state = {
       activeInformationId: null,
-      categorySelected: "all",
+      categorySelected: "About",
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
       beenToHome : false
@@ -180,29 +179,12 @@ render(){
 
 
       <div>
-        <Plaine
-          sizes={sizes.plaineSize}
+        <PlaineContainer
+          sizes={sizes}
           app ={app}
           selectedView={this._setCategory}
-          categorySelected = {this.state.categorySelected}>
+          categorySelected = {this.state.categorySelected}/>
 
-      <div className="baseInfoContain" >
-        <div>
-          <Title styles={sizes.availiableInfoSize}/>
-
-        </div>
-        {information.edges.filter(this._filterInformation).map( ({node}) => (
-
-            <InformationContainer
-            sizes={sizes.infoContainersSize}
-            key={tokgen.generate()}
-            activator= {this._handleInfoSelect}
-            information={node}
-            activeInformationId = {this.state.activeInformationId}
-            />) )}
-
-        </div>
-        </Plaine>
       </div>
 
   )
@@ -236,7 +218,7 @@ Base = Relay.createContainer(Base, {
               }
             }
           },
-        ${Plaine.getFragment('app')}
+        ${PlaineContainer.getFragment('app')}
         ${CreateInformationMutation.getFragment('app')},
       }`
   }

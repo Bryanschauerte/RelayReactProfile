@@ -1,6 +1,6 @@
 import React from 'react';
 import Relay from 'react-relay';
-import {resonsiveStyleObject, colors} from './responsiveStyleObject';
+import {resonsiveStyleObject, colors} from './StyleEffects/responsiveStyleObject';
 import Information from './Information'
 
 class InformationContainer extends React.Component{
