@@ -1,0 +1,55 @@
+{
+  "name": "RelayReactProfile",
+  "version": "1.0.0",
+  "description": "React GraphQL Relay and Node",
+  "main": "server.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node --presets react,es2015,stage-0 server.js",
+    "build": "webpack -w -d"
+  },
+  "keywords": [
+    "React",
+    "graphQL",
+    "Relay",
+    "Node"
+  ],
+  "author": "Bryan Schauerte",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-relay-plugin": "^0.8.1",
+    "events": "^1.1.0",
+    "express": "^4.13.4",
+    "express-graphql": "^0.5.2",
+    "fs": "0.0.2",
+    "graphiql": "^0.7.1",
+    "graphql": "^0.6.0",
+    "graphql-relay": "^0.4.1",
+    "http-server": "^0.9.0",
+    "isomorphic-fetch": "^2.2.1",
+    "kerberos": "0.0.21",
+    "mongodb": "^2.1.19",
+    "path": "^0.12.7",
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-relay": "^0.8.1",
+    "react-transform-catch-errors": "^1.0.2",
+    "uuid-token-generator": "^0.5.0",
+    "webpack": "^1.13.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0"
+  }
+}
