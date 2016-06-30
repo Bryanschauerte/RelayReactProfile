@@ -9,7 +9,11 @@ import Title from './Title';
 
   render(){
 console.log(this.props, "from Plaine")
-    return (<div>Plaine</div>)
+    return (
+      <div onClick={this.props.activator}>
+        {this.props.titleInfo}
+      </div>
+    )
           }
 
         }

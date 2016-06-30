@@ -14,11 +14,11 @@ import styling from "./StyleEffects/_Plaine";
      this.state= {
        activePlaine: "About"
      };
-     this._handleClick = this._handleClick.bind(this);
-     this._handleStyle = this._handleClick.bind(this);
+     this._handleActivePlaine = this._handleActivePlaine.bind(this);
+     this._handleStyle = this._handleStyle.bind(this);
    }
 
-_handleClick(x){
+_handleActivePlaine(x){
   console.log(x, "clicked")
 this.setState({activePlaine: x})
 }
@@ -41,11 +41,11 @@ render(){
 
     return (
       <Plaine
-        onClick={this._handleClick.bind(this, node.label)}
+        activator={this._handleActivePlaine.bind(this, node.label)}
         key={tokgen.generate()}
         titleInfo= {node.label}
         app= {app}
-        style={this._handleStyle.bind(node.label)}
+        styles={this._handleStyle.bind(node.label)}
         sizes={this.props.sizes}/>
     )
   })}

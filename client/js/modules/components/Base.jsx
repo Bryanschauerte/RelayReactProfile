@@ -12,6 +12,7 @@ import TopNav from './TopNav.js';
 import InformationContainer from './InfoContainer.js';
 import PlaineContainer from './PlaineContainer';
 import Title from './Title';
+import Shell from './Shell';
 
 
 class Base extends React.Component{
@@ -43,6 +44,10 @@ class Base extends React.Component{
       let totalW = this.state.windowWidth;
       let totalH = this.state.windowHeight;
       let sizes = {};
+
+      sizes.totalHeight = totalH;
+      sizes.totalWidth = totalW;
+
       let sideMenuSizesConfig = {
         height: 1,
         width: .2
@@ -174,18 +179,23 @@ render(){
   let {app} = this.props;
   let {information} = this.props.app;
   let sizes =  this._generateSizes();
-
+console.log(sizes, "Sizes from Base")
   return (
 
+<div>
+  <Shell sizes={sizes}>
+    <div>
+      <PlaineContainer
+        sizes={sizes}
+        app ={app}
+        selectView={this._setCategory}
+        categorySelected = {this.state.categorySelected}/>
 
-      <div>
-        <PlaineContainer
-          sizes={sizes}
-          app ={app}
-          selectedView={this._setCategory}
-          categorySelected = {this.state.categorySelected}/>
+    </div>
+  </Shell>
 
-      </div>
+</div>
+
 
   )
 
